@@ -1,0 +1,26 @@
+<window id="136">
+
+	<animation effect="fade" time="100">WindowOpen</animation>
+	<animation effect="fade" time="200">WindowClose</animation>
+
+	<controls>
+		<!-- background -->
+		<control type="image">
+			<texture>black2x2.png</texture>
+			<width>1280</width>
+			<height>720</height>
+			<colordiffuse>overlay</colordiffuse>
+		</control>
+		<!-- busy anim -->
+		<control type="multiimage">
+			<imagepath>loading</imagepath>
+			<width>128</width>
+			<height>128</height>
+			<posx>576</posx>
+			<posy>296</posy>
+			<timeperimage>300</timeperimage>
+			<fadetime>0</fadetime>
+			<colordiffuse>70ffffff</colordiffuse>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,48 @@
+<window id="2004">
+	
+	<controls>
+	
+		<control type="group">
+
+			<posx>20</posx>
+			<posy>300</posy>
+
+			<!-- background -->
+			<control type="image">
+				<texture border="12">bg-dialog.png</texture>
+				<width>440</width>
+				<height>400</height>
+				<colordiffuse>dialog</colordiffuse>
+			</control>
+			<!-- video -->
+			<control type="videowindow" id="0">
+				<width>400</width>
+				<height>400</height>
+				<posx>20</posx>
+			</control>
+			<!-- title -->
+			<control type="label">
+				<label>$INFO[VideoPlayer.Title]</label>
+				<width>280</width>
+				<height>40</height>
+				<posx>20</posx>
+				<posy>20</posy>
+				<font>videooverlay</font>
+				<textcolor>videooverlay</textcolor>
+			</control>
+			<!-- time -->
+			<control type="label">
+				<label>$INFO[VideoPlayer.Time]</label>
+				<width>200</width>
+				<height>40</height>
+				<posx>420</posx>
+				<posy>20</posy>
+				<font>videooverlay</font>
+				<textcolor>videooverlay-dark</textcolor>
+				<align>right</align>
+			</control>			
+		</control>
+				
+	</controls>
+
+</window>

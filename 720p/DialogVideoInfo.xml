@@ -1,0 +1,771 @@
+<!-- TODO -->
+<window id="2003">
+
+	<!-- ADD TO info icon on video osd <visible>VideoPlayer.HasInfo</visible> -->
+	<defaultcontrol always="true">5</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+
+	<controls>
+	
+		<!-- dimmed background -->
+		<control type="image">
+			<texture>black.png</texture>
+			<width>1280</width>
+			<height>720</height>
+			<colordiffuse>dimmed</colordiffuse>
+		</control>
+		
+		<control type="group">
+		
+			<posx>180</posx>
+			<posy>40</posy>
+			
+			<!-- background -->
+			<control type="image">
+				<texture border="12">bg-dialog.png</texture>
+				<width>920</width>
+				<height>640</height>
+				<colordiffuse>dialog</colordiffuse>
+			</control>
+			
+			<!-- title -->
+			<control type="group">		
+				<posx>20</posx>
+				<posy>20</posy>
+				<control type="label" id="20">
+					<width>860</width>
+					<height>20</height>
+					<font>dialog</font>
+					<textcolor>type-dialog-dark</textcolor>
+				</control>
+				<control type="label">
+					<label>$INFO[listitem.title]</label>
+					<width>980</width>
+					<height>20</height>
+					<font>dialog-header</font>
+					<textcolor>type-dialog-header</textcolor>
+				</control>
+				<control type="label">
+					<label>$INFO[ListItem.tvshowtitle]</label>
+					<width>860</width>
+					<height>20</height>
+					<font>dialog</font>
+					<textcolor>type-dialog-dark</textcolor>
+				</control>
+			</control>
+			<!-- cover image -->
+			<control type="group">		
+				<posx>20</posx>
+				<posy>60</posy>
+				<control type="image">
+					<texture border="4">input-nofocus.png</texture>
+					<width>240</width>
+					<height>300</height>
+				</control>
+				<control type="image" id="3">
+					<width>220</width>
+					<height>280</height>
+					<posx>10</posx>
+					<posy>10</posy>
+					<aspectratio>keep</aspectratio>
+				</control>
+				<control type="image">
+					<texture>$INFO[ListItem.Icon]</texture>
+					<width>220</width>
+					<height>220</height>
+					<posx>10</posx>
+					<posy>10</posy>
+					<aspectratio>keep</aspectratio>
+				</control>
+			</control>
+
+			<!-- movie info -->
+			<control type="group">
+			
+				<visible>!Container.Content(tvshows)</visible>
+				<visible>!Container.Content(episodes)</visible>
+				<visible>!Container.Content(musicvideos)</visible>
+			
+				<!-- studio -->
+				<control type="label">
+					<label>Studio</label>
+					<width>100</width>
+					<posx>380</posx>
+					<posy>60</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog-dark</textcolor>
+					<align>right</align>
+				</control>
+				<control type="label" id="36">
+					<width>460</width>
+					<posx>400</posx>
+					<posy>60</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog</textcolor>
+				</control>
+				<!-- director -->	
+				<control type="label">
+					<label>Director</label>
+					<width>100</width>
+					<posx>380</posx>
+					<posy>90</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog-dark</textcolor>
+					<align>right</align>
+				</control>
+				<control type="label" id="21">
+					<width>460</width>
+					<posx>400</posx>
+					<posy>90</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog</textcolor>
+				</control>
+				<!-- writers -->	
+				<control type="label">
+					<label>Writers</label>
+					<width>100</width>
+					<posx>380</posx>
+					<posy>120</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog-dark</textcolor>
+					<align>right</align>
+				</control>
+				<control type="label" id="22">
+					<width>460</width>
+					<posx>400</posx>
+					<posy>120</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog</textcolor>
+				</control>
+				<!-- genre -->
+				<control type="label">
+					<label>Genre</label>
+					<width>100</width>
+					<posx>380</posx>
+					<posy>150</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog-dark</textcolor>
+					<align>right</align>
+				</control>
+				<control type="label" id="23">
+					<width>460</width>
+					<posx>400</posx>
+					<posy>150</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog</textcolor>
+				</control>
+				<!-- year -->
+				<control type="label">
+					<label>Year</label>
+					<width>100</width>
+					<posx>380</posx>
+					<posy>180</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog-dark</textcolor>
+					<align>right</align>
+				</control>
+				<control type="label" id="24">
+					<width>460</width>
+					<posx>400</posx>
+					<posy>180</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog</textcolor>
+				</control>
+				<!-- tagline -->
+				<control type="label">
+					<label>Tagline</label>
+					<width>100</width>
+					<posx>380</posx>
+					<posy>210</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog-dark</textcolor>
+					<align>right</align>
+				</control>
+				<control type="label" id="25">
+					<width>460</width>
+					<posx>400</posx>
+					<posy>210</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog</textcolor>
+				</control>
+				<!-- plot outline -->
+				<control type="label">
+					<label>Plot Outline</label>
+					<width>100</width>
+					<posx>380</posx>
+					<posy>240</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog-dark</textcolor>
+					<align>right</align>
+				</control>
+				<control type="label" id="26">
+					<width>460</width>
+					<posx>400</posx>
+					<posy>240</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog</textcolor>
+				</control>
+				<!-- rating -->
+				<control type="label">
+					<label>Rating</label>
+					<width>100</width>
+					<posx>380</posx>
+					<posy>270</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog-dark</textcolor>
+					<align>right</align>
+				</control>
+				<control type="label" id="30">
+					<width>460</width>
+					<posx>400</posx>
+					<posy>270</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog</textcolor>
+				</control>
+				<!-- runtime -->
+				<control type="label">
+					<label>Runtime</label>
+					<width>100</width>
+					<posx>380</posx>
+					<posy>300</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog-dark</textcolor>
+					<align>right</align>
+				</control>
+				<control type="label" id="31">
+					<width>460</width>
+					<posx>400</posx>
+					<posy>300</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog</textcolor>
+				</control>
+				<!-- mpaa rating -->
+				<control type="label">
+					<label>MPAA Rating</label>
+					<width>100</width>
+					<posx>380</posx>
+					<posy>330</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog-dark</textcolor>
+					<align>right</align>
+				</control>
+				<control type="label" id="32">
+					<width>460</width>
+					<posx>400</posx>
+					<posy>330</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog</textcolor>
+				</control>
+			</control>
+		
+			<!-- tv show info -->
+			<control type="group">
+				
+				<visible>Container.Content(tvshows)</visible>
+								
+				<!-- episodes -->	
+				<control type="label">
+					<label>Episodes</label>
+					<width>100</width>
+					<posx>380</posx>
+					<posy>60</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog-dark</textcolor>
+					<align>right</align>
+				</control>
+				<control type="label">
+					<label>$INFO[listitem.episode]</label>
+					<width>460</width>
+					<posx>400</posx>
+					<posy>60</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog</textcolor>
+				</control>
+				<!-- first aired -->
+				<control type="label">
+					<label>First Aired</label>
+					<width>100</width>
+					<posx>380</posx>
+					<posy>90</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog-dark</textcolor>
+					<align>right</align>
+				</control>
+				<control type="label" id="24">
+					<width>460</width>
+					<posx>400</posx>
+					<posy>90</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog</textcolor>
+				</control>
+				<!-- genre -->
+				<control type="label">
+					<label>Genre</label>
+					<width>100</width>
+					<posx>380</posx>
+					<posy>120</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog-dark</textcolor>
+					<align>right</align>
+				</control>
+				<control type="label" id="23">
+					<width>460</width>
+					<posx>400</posx>
+					<posy>120</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog</textcolor>
+				</control>
+			</control>
+		
+			<!-- episode info -->
+			<control type="group">
+			
+				<visible>Container.Content(episodes)</visible>
+				
+				<!-- episodes -->	
+				<control type="label">
+					<label>Episodes</label>
+					<width>100</width>
+					<posx>380</posx>
+					<posy>60</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog-dark</textcolor>
+					<align>right</align>
+				</control>
+				<control type="label">
+					<label>$INFO[listitem.episode]</label>
+					<width>460</width>
+					<posx>400</posx>
+					<posy>60</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog</textcolor>
+				</control>
+				<!-- season -->
+				<control type="label">
+					<label>Season</label>
+					<width>100</width>
+					<posx>380</posx>
+					<posy>90</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog-dark</textcolor>
+					<align>right</align>
+				</control>
+				<control type="label">
+					<label>$INFO[Listitem.Season]</label>
+					<width>460</width>
+					<posx>400</posx>
+					<posy>90</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog</textcolor>
+				</control>
+				<!-- director -->	
+				<control type="label">
+					<label>Director</label>
+					<width>100</width>
+					<posx>380</posx>
+					<posy>120</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog-dark</textcolor>
+					<align>right</align>
+				</control>
+				<control type="label" id="21">
+					<width>460</width>
+					<posx>400</posx>
+					<posy>120</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog</textcolor>
+				</control>
+				<!-- writers -->
+				<control type="label">
+					<label>Writers</label>
+					<width>100</width>
+					<posx>380</posx>
+					<posy>150</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog-dark</textcolor>
+					<align>right</align>
+				</control>
+				<control type="label" id="22">
+					<width>460</width>
+					<posx>400</posx>
+					<posy>150</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog</textcolor>
+				</control>
+				<!-- genre -->
+				<control type="label">
+					<label>Genre</label>
+					<width>100</width>
+					<posx>380</posx>
+					<posy>180</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog-dark</textcolor>
+					<align>right</align>
+				</control>
+				<control type="label" id="23">
+					<width>460</width>
+					<posx>400</posx>
+					<posy>180</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog</textcolor>
+				</control>
+				<!-- year -->
+				<control type="label">
+					<label>Year</label>
+					<width>100</width>
+					<posx>380</posx>
+					<posy>210</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog-dark</textcolor>
+					<align>right</align>
+				</control>
+				<control type="label" id="24">
+					<width>460</width>
+					<posx>400</posx>
+					<posy>210</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog</textcolor>
+				</control>
+				<!-- rating -->
+				<control type="label">
+					<label>Rating</label>
+					<width>100</width>
+					<posx>380</posx>
+					<posy>240</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog-dark</textcolor>
+					<align>right</align>
+				</control>
+				<control type="label" id="30">
+					<width>460</width>
+					<posx>400</posx>
+					<posy>240</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog</textcolor>
+				</control>				
+			</control>
+		
+			<!-- music video info -->
+			<control type="group">
+			
+				<visible>container.content(musicvideos)</visible>
+				
+				<!-- artist -->	
+				<control type="label">
+					<label>Artist</label>
+					<width>100</width>
+					<posx>380</posx>
+					<posy>60</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog-dark</textcolor>
+					<align>right</align>
+				</control>
+				<control type="label">
+					<label>$INFO[listitem.Artist]</label>
+					<width>460</width>
+					<posx>400</posx>
+					<posy>60</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog</textcolor>
+				</control>
+				<!-- album -->
+				<control type="label">
+					<label>Album</label>
+					<width>100</width>
+					<posx>380</posx>
+					<posy>90</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog-dark</textcolor>
+					<align>right</align>
+				</control>
+				<control type="label">
+					<label>$INFO[Listitem.Album]</label>
+					<width>460</width>
+					<posx>400</posx>
+					<posy>90</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog</textcolor>
+				</control>
+				<!-- genre -->	
+				<control type="label">
+					<label>Genre</label>
+					<width>100</width>
+					<posx>380</posx>
+					<posy>120</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog-dark</textcolor>
+					<align>right</align>
+				</control>
+				<control type="label">
+					<label>$INFO[Listitem.Genre]</label>
+					<width>460</width>
+					<posx>400</posx>
+					<posy>120</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog</textcolor>
+				</control>
+				<!-- year -->
+				<control type="label">
+					<label>Year</label>
+					<width>100</width>
+					<posx>380</posx>
+					<posy>150</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog-dark</textcolor>
+					<align>right</align>
+				</control>
+				<control type="label">
+					<label>$INFO[Listitem.Year]</label>
+					<width>460</width>
+					<posx>400</posx>
+					<posy>150</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog</textcolor>
+				</control>
+				<!-- runtime -->
+				<control type="label">
+					<label>Runtime</label>
+					<width>100</width>
+					<posx>380</posx>
+					<posy>180</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog-dark</textcolor>
+					<align>right</align>
+				</control>
+				<control type="label">
+					<label>$INFO[Listitem.Duration]</label>
+					<width>460</width>
+					<posx>400</posx>
+					<posy>180</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog</textcolor>
+				</control>
+				<!-- director -->
+				<control type="label">
+					<label>Director</label>
+					<width>100</width>
+					<posx>380</posx>
+					<posy>210</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog-dark</textcolor>
+					<align>right</align>
+				</control>
+				<control type="label">
+					<label>$INFO[Listitem.Director]</label>
+					<width>460</width>
+					<posx>400</posx>
+					<posy>210</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog</textcolor>
+				</control>
+				<!-- studio -->
+				<control type="label">
+					<label>Studio</label>
+					<width>100</width>
+					<posx>380</posx>
+					<posy>240</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog-dark</textcolor>
+					<align>right</align>
+				</control>
+				<control type="label">
+					<label>$INFO[Listitem.Studio]</label>
+					<width>460</width>
+					<posx>400</posx>
+					<posy>240</posy>
+					<font>dialog</font>
+					<textcolor>type-dialog</textcolor>
+				</control>				
+			</control>
+		
+			<control type="group" id="9000">
+				
+				<posx>65</posx>
+				<posy>380</posy>
+				
+				<!-- plot/cast button -->
+				<control type="button" id ="5">
+					<label>206</label>
+					<onleft>50</onleft>
+					<onright>4</onright>
+					<onup>11</onup>
+					<ondown>10</ondown>
+				</control>
+				<!-- get thumb -->
+				<control type="button" id ="10">
+					<label>Get Thumb</label>
+					<posy>45</posy>
+					<onleft>4</onleft>
+					<onright>4</onright>
+					<onup>5</onup>
+					<ondown>6</ondown>
+				</control>
+				<!-- refresh -->
+				<control type="button" id ="6">
+					<label>Refresh</label>
+					<posy>90</posy>
+					<onleft>4</onleft>
+					<onright>4</onright>
+					<onup>10</onup>
+					<ondown>8</ondown>
+				</control>
+				<!-- play -->
+				<control type="button" id ="8">
+					<label>Play</label>
+					<posy>135</posy>
+					<onleft>4</onleft>
+					<onright>4</onright>
+					<onup>6</onup>
+					<ondown>9</ondown>
+				</control>
+				<!-- resume -->
+				<control type="button" id ="9">
+					<label>Resume</label>
+					<posy>180</posy>
+					<onleft>4</onleft>
+					<onright>4</onright>
+					<onup>8</onup>
+					<ondown>11</ondown>
+				</control>
+				<!-- trailer -->
+				<control type="button" id ="11">
+					<visible>!IsEmpty(ListItem.Trailer)</visible>
+					<label>Trailer</label>
+					<posy>225</posy>
+					<onleft>4</onleft>
+					<onright>4</onright>
+					<onup>9</onup>
+					<ondown>5</ondown>
+				</control>
+			</control>
+		
+			<!-- cast list -->
+			<control type="list" id="50">
+				<width>540</width>
+				<height>184</height>
+				<posx>300</posx>
+				<posy>398</posy>
+				<onleft>9000</onleft>
+				<onright>61</onright>
+				<onup>50</onup>
+				<ondown>50</ondown>
+				<pagecontrol>61</pagecontrol>
+				<itemlayout width="540" height="30">
+					<control type="image">
+						<visible>Control.HasFocus(50)</visible>
+						<texture>list-nofocus.png</texture>
+						<width>350</width>
+						<height>29</height>
+						<posx>0</posx>
+						<posy>0</posy>
+					</control>
+					<control type="label">
+						<label>$INFO[ListItem.Label]</label>
+						<width>200</width>
+						<height>20</height>
+						<posy>-10</posy>
+						<font>dialog</font>
+						<textcolor>type-dialog-dark</textcolor>
+					</control>
+				</itemlayout>
+				<focusedlayout height="30" width="540">
+					<control type="image">
+						<visible>Control.HasFocus(50)</visible>
+						<texture>list-focus.png</texture>
+						<width>350</width>
+						<height>29</height>
+						<posx>0</posx>
+						<posy>0</posy>
+					</control>
+					<control type="image">
+						<texture>DefaultActorBig.png</texture>
+						<texture>$INFO[ListItem.Icon}</texture>
+						<width>22</width>
+						<height>22</height>
+						<posy>3</posy>
+					</control>
+					<control type="label">
+						<label>$INFO[ListItem.Label]</label>
+						<width>320</width>
+						<height>22</height>
+						<posx>30</posx>
+						<posy>3</posy>
+						<font>dialog</font>
+						<textcolor>type-dialog</textcolor>
+					</control>
+				</focusedlayout>
+			</control>
+			<!-- actor image -->
+			<control type="group">
+				<visible>Control.IsVisible(50)</visible>
+				
+				<control type="image">
+					<texture border="4">input-nofocus.png</texture>
+					<width>105</width>
+					<height>180</height>
+					<posx>555</posx>
+					<posy>345</posy>
+					<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="image">
+					<info>Container(50).ListItem.Thumb</info>
+					<width>85</width>
+					<height>130</height>
+					<posx>565</posx>
+					<posy>370</posy>
+					<aspectratio aligny="center">keep</aspectratio>
+					<align>center</align>
+				</control>
+			</control>
+			
+			<!-- plot -->
+			<control type="textbox" id="4">
+				<visible>!Control.IsVisible(50)</visible>
+				<width>540</width>
+				<height>184</height>
+				<posx>300</posx>
+				<posy>380</posy>
+				<font>dialog</font>
+				<textcolor>type-dialog-dark</textcolor>
+				<onleft>5</onleft>
+				<onright>50</onright>
+				<onup>5</onup>
+				<ondown>5</ondown>
+				<pagecontrol>61</pagecontrol>
+			</control>
+
+			<control type="group">
+			
+				<posx>880</posx>
+				<posy>380</posy>
+			
+				<control type="button">
+					<visible>Control.IsVisible(61)</visible>
+					<width>20</width>
+					<height>20</height>
+					<texturefocus border="4">scrollbar-up.png</texturefocus>
+					<texturenofocus border="4">scrollbar-up-nf.png</texturenofocus>
+					<onclick>PageUp(61)</onclick>
+				</control>
+				<control type="scrollbar" id="61">
+					<width>20</width>
+					<height>180</height>
+					<posy>20</posy>
+					<onleft>50</onleft>
+					<onright>9000</onright>
+				</control>		
+				<control type="button">
+					<visible>Control.IsVisible(61)</visible>
+					<width>20</width>
+					<height>20</height>
+					<posy>200</posy>
+					<texturefocus border="4">scrollbar-down.png</texturefocus>
+					<texturenofocus border="4">scrollbar-down-nf.png</texturenofocus>
+					<onclick>PageDown(61)</onclick>
+				</control>
+			</control>
+		</control>
+		
+	</controls>
+	
+</window>

@@ -1,0 +1,148 @@
+<window id="0">
+
+	<defaultcontrol>9000</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+	
+	<controls>
+	
+		<!-- background -->
+		<include>bg-movies</include>
+		<include>bg-tv</include>
+		<include>bg-games</include>
+		<include>bg-arcade</include>
+		<include>bg-music</include>
+		<include>bg-pictures</include>
+		<include>bg-weather</include>
+		<!-- background overlay -->
+		<control type="image">
+		    <texture>black2x2.png</texture>
+		    <width>1280</width>
+		    <height>720</height>
+		    <colordiffuse>cc000000</colordiffuse>
+		</control>
+		
+		<!-- main buttons -->
+		<control type="list" id="9000">
+			<viewtype label="menu">wrap</viewtype>
+			<width>640</width>
+			<height>350</height>
+			<posx>280</posx>
+			<posy>185</posy>
+			<orientation>vertical</orientation>
+			<scrolltime>200</scrolltime>
+			<onup>9000</onup>
+			<ondown>9000</ondown>
+			<content>
+				<item id="1">
+					<label>movies</label>
+					<onclick>ActivateWindow(MyVideos,Movies)</onclick>
+					<onclick>Skin.SetBool(movies)</onclick>
+					<onclick>Skin.Reset(tv)</onclick>
+				</item>
+				<item id="2">
+					<label>tv</label>
+					<onclick>ActivateWindow(MyVideos,TV)</onclick>
+					<onclick>Skin.SetBool(tv)</onclick>
+					<onclick>Skin.Reset(movies)</onclick>
+				</item>
+				<item id="3">
+					<label>games</label>
+					<onclick>ActivateWindow(MyPrograms,Games)</onclick>
+					<onclick>Skin.SetBool(games)</onclick>
+					<onclick>Skin.Reset(arcade)</onclick>
+				</item>
+				<item id="4">
+					<label>arcade</label>
+					<onclick>ActivateWindow(MyPrograms,Arcade)</onclick>
+					<onclick>Skin.SetBool(arcade)</onclick>
+					<onclick>Skin.Reset(games)</onclick>
+				</item>
+				<item id="5">
+					<label>music</label>
+					<onclick>ActivateWindow(MyMusic)</onclick>
+				</item>
+				<item id="6">
+					<label>pictures</label>
+					<onclick>ActivateWindow(MyPictures)</onclick>
+				</item>
+				<item id="7">
+					<label>weather</label>
+					<onclick>ActivateWindow(Weather)</onclick>
+				</item>
+			</content>
+			<itemlayout height="50">
+				<control type="label">
+					<label>$INFO[ListItem.Label]</label>
+					<width>640</width>
+					<height>50</height>
+					<posx>640</posx>
+					<font>menu</font>
+					<textcolor>mint-dark</textcolor>
+					<texturefocus>mint-current.png</texturefocus>
+					<align>right</align>
+				</control>
+			</itemlayout>
+			<focusedlayout height="50">
+				<control type="label">
+					<label>$INFO[ListItem.Label]</label>
+					<width>640</width>
+					<height>50</height>
+					<posx>640</posx>
+					<font>menu</font>
+					<textcolor>mint</textcolor>
+					<texturefocus>mint-current.png</texturefocus>
+					<align>right</align>
+				</control>
+			</focusedlayout>
+		</control>
+		
+		<control type="group">
+			
+			<animation effect="slide" start="0,-80" end="0,0" time="300">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,-80" time="100">WindowClose</animation>
+
+			<!-- background -->	
+			<control type="image">
+			    <texture>black2x2.png</texture>
+			    <width>1280</width>
+			    <height>80</height>
+			    <colordiffuse>50a0c786</colordiffuse>
+			</control>
+			<!-- mint logo -->
+			<control type="image">
+				<texture>mint-logo.png</texture>
+				<width>48</width>
+				<height>48</height>
+				<posx>20</posx>
+				<posy>18</posy>
+			</control>
+			<!-- xbmc logo -->
+			<control type="image">
+				<texture>xbmc-logo.png</texture>
+				<width>120</width>
+				<height>32</height>
+				<posx>88</posx>
+				<posy>24</posy>
+			</control>
+			<!-- temp / time -->
+			<control type="label">
+				<label>$INFO[Weather.Temperature,, |]  $INFO[System.Time]</label>
+				<height>80</height>
+				<posx>1240</posx>
+				<font>header</font>
+				<textcolor>header-dark</textcolor>
+				<align>right</align>
+			</control>
+		</control>
+		<control type="image">
+		    <texture>black2x2.png</texture>
+		    <width>1280</width>
+		    <height>80</height>
+		    <posy>640</posy>
+		    <colordiffuse>50a0c786</colordiffuse>
+			<animation effect="slide" start="0,80" end="0,0" time="300">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,80" time="100">WindowClose</animation>
+		</control>
+						
+	</controls>
+</window>

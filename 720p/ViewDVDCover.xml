@@ -1,0 +1,68 @@
+<includes>
+	<include name="DVDCoverView">
+	
+		<control type="fixedlist" id="53">
+			<viewtype label="DVDCover">wraplist</viewtype>
+			<width>790</width>
+			<height>380</height>
+			<posx>400</posx>
+			<posy>160</posy>
+			<onleft>53</onleft>
+			<onright>53</onright>
+			<onup>9000</onup>
+			<ondown>9000</ondown>
+			<scrolltime>200</scrolltime>
+			<pagecontrol>60</pagecontrol>
+			<focusposition>1</focusposition>
+			<orientation>horizontal</orientation>
+			<itemlayout width="280" height="280">
+				<control type="image">
+					<info>ListItem.Icon</info>
+					<width>280</width>
+					<height>280</height>
+					<posx>-50</posx>
+					<posy>30</posy>
+					<colordiffuse>dd4e4e4e</colordiffuse>
+					<aspectratio aligny="bottom">keep</aspectratio>
+				</control>
+				<control type="image">
+					<info>ListItem.Icon</info>
+					<texture flipy="true" diffuse="diffuse_mirror.png" /> 
+					<width>280</width>
+					<height>280</height>
+					<posx>-50</posx>
+					<posy>310</posy>
+					<aspectratio aligny="top">keep</aspectratio>
+				</control>
+			</itemlayout>
+			<focusedlayout width="340" height="340">
+				<control type="image">
+					<info>ListItem.Icon</info>
+					<width>340</width>
+					<height>340</height>
+					<posx>-50</posx>
+					<aspectratio aligny="bottom">keep</aspectratio>
+				</control>
+				<control type="image">
+					<info>ListItem.Icon</info>
+					<texture flipy="true" diffuse="diffuse_mirror.png" /> 
+					<width>340</width>
+					<height>340</height>
+					<posx>-50</posx>
+					<posy>340</posy>
+					<aspectratio aligny="top">keep</aspectratio>
+				</control>
+			</focusedlayout>
+		</control>
+		<control type="label">
+			<label>$INFO[ListItem.Label]</label>
+			<visible>Control.IsVisible(53)</visible>
+			<width>790</width>
+			<height>40</height>
+			<posx>400</posx>
+			<posy>550</posy>
+			<font>content</font>
+			<align>center</align>
+		</control>
+	</include>
+</includes>

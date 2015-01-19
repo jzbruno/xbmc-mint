@@ -1,0 +1,166 @@
+<window id="12">
+
+	<defaultcontrol>2</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+
+	<controls>
+
+		<!-- background -->
+		<include>bg-system</include>
+		<control type="image">
+			<texture>white2x2.png</texture>
+			<width>1280</width>
+			<height>720</height>
+			<colordiffuse>ff20281b</colordiffuse>
+		</control>
+
+		<!-- settings panel -->
+		<control type="image">
+			<texture border="12">bg-panel.png</texture>
+			<width>280</width>
+			<height>480</height>
+			<posx>40</posx>
+			<posy>120</posy>
+			<colordiffuse>panel</colordiffuse>
+		</control>
+		
+		<!-- categories -->
+		<control type="grouplist" id="3">
+			<width>200</width>
+			<height>440</height>
+			<posx>80</posx>
+			<posy>140</posy>
+			<onleft>5</onleft>
+			<onright>5</onright>
+			<onup>3</onup>
+			<ondown>3</ondown>
+		</control>
+		<control type="button" id="10">
+			<include>type-sidebar</include>
+		</control>
+		
+		<!-- content panel -->
+		<control type="image">
+			<texture border="12">bg-panel.png</texture>
+			<width>870</width>
+			<height>480</height>
+			<posx>360</posx>
+			<posy>120</posy>
+			<colordiffuse>panel</colordiffuse>
+		</control>
+
+		<!-- settings -->
+		<control type="grouplist" id="5">
+			<width>750</width>
+			<height>440</height>
+			<posx>400</posx>
+			<posy>140</posy>
+			<pagecontrol>90</pagecontrol>
+			<onleft>3</onleft>
+			<onright>90</onright>
+			<onup>5</onup>
+			<ondown>5</ondown>
+		</control>
+		<control type="button" id="7">
+			<font>settings</font>
+			<textcolor>settings-dark</textcolor>
+			<focusedcolor>settings</focusedcolor>
+		</control>
+		<control type="radiobutton" id="8">
+			<font>settings</font>
+			<textcolor>settings-dark</textcolor>
+			<focusedcolor>settings</focusedcolor>
+			<textoffsetx>7</textoffsetx>
+			<textureradiofocus>checkbox.png</textureradiofocus>
+			<textureradionofocus>checkbox-nf.png</textureradionofocus>
+		</control>
+		<control type="spincontrolex" id="9">
+			<width>300</width>
+			<font>settings</font>
+			<textcolor>settings-dark</textcolor>
+			<focusedcolor>settings</focusedcolor>
+			<textoffsetx>7</textoffsetx>
+		</control>
+		<!-- separator -->
+		<control type="image" id="11">
+			<width>600</width>
+			<height>5</height>
+			<texture>separator.png</texture>
+		</control>
+		<control type="button">
+			<visible>Control.IsVisible(90)</visible>
+			<width>20</width>
+			<height>20</height>
+			<posx>1200</posx>
+			<posy>140</posy>
+			<texturefocus border="4">scrollbar_arrow_up_focus.png</texturefocus>
+			<texturenofocus border="4">scrollbar_arrow_up.png</texturenofocus>
+			<onclick>PageUp(90)</onclick>
+		</control>
+		<control type="button">
+			<visible>Control.IsVisible(90)</visible>
+			<width>20</width>
+			<height>20</height>
+			<posx>1200</posx>
+			<posy>140</posy>
+			<texturefocus border="4">scrollbar_arrow_down_focus.png</texturefocus>
+			<texturenofocus border="4">scrollbar_arrow_down.png</texturenofocus>
+			<onclick>PageDown(90)</onclick>
+		</control>
+		<control type="scrollbar" id="90">
+			<width>20</width>
+			<height>440</height>
+			<posx>1200</posx>
+			<posy>140</posy>
+			<texturesliderbackground border="4">scrollbar_background.png</texturesliderbackground>
+			<texturesliderbar border="4">scrollbar_bar.png</texturesliderbar>
+			<texturesliderbarfocus border="4">scrollbar_bar_focus.png</texturesliderbarfocus>
+			<textureslidernib></textureslidernib>
+			<textureslidernibfocus></textureslidernibfocus>
+			<onleft>5</onleft>
+			<onright>3</onright>
+			<showonepage>false</showonepage>
+			<orientation>vertical</orientation>
+		</control>
+
+		<!-- header -->
+		<control type="group">
+		
+			<animation effect="slide" start="0,-80" end="0,0" time="300">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,-80" time="300">WindowClose</animation>
+
+			<!-- background -->
+			<control type="image">
+				<texture>mint2x2.png</texture>
+				<width>1280</width>
+				<height>80</height>
+			</control>
+			<!-- mint logo -->
+			<control type="image">
+				<texture>mint-logo.png</texture>
+				<width>48</width>
+				<height>48</height>
+				<posx>20</posx>
+				<posy>16</posy>
+			</control>
+			<!-- window name -->
+			<control type="label">
+				<label>$INFO[Skin.String(settingstitle)]</label>
+				<height>80</height>
+				<posx>88</posx>
+				<font>header</font>
+				<textcolor>header-dark</textcolor>
+			</control>
+			<!-- temp / time -->
+			<control type="label">
+				<label>$INFO[Weather.Temperature,, |]  $INFO[System.Time]</label>
+				<height>80</height>
+				<posx>1240</posx>
+				<font>header</font>
+				<textcolor>header-dark</textcolor>
+				<align>right</align>
+			</control>
+		</control>					
+
+	</controls>
+</window>

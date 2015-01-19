@@ -1,0 +1,114 @@
+<window id="500">
+
+	<defaultcontrol>50</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+
+	<controls>
+
+		<!-- background -->
+		<include>bg-music</include>
+		<control type="image">
+			<texture>white2x2.png</texture>
+			<width>1280</width>
+			<height>720</height>
+			<colordiffuse>ff20281b</colordiffuse>
+		</control>
+		
+		<!-- view modes -->		
+		<include>ViewPanelSmall</include>
+
+		<!-- header -->
+		<control type="group">
+		
+			<animation effect="slide" start="0,-80" end="0,0" time="300">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,-80" time="300">WindowClose</animation>
+
+			<!-- background -->
+			<control type="image">
+				<texture>mint2x2.png</texture>
+				<width>1280</width>
+				<height>80</height>
+			</control>
+			<!-- mint logo -->
+			<control type="image">
+				<texture>mint-logo.png</texture>
+				<width>48</width>
+				<height>48</height>
+				<posx>20</posx>
+				<posy>16</posy>
+			</control>
+			<!-- window name -->
+			<control type="label">
+				<label>Music Playlist</label>
+				<height>80</height>
+				<posx>88</posx>
+				<font>header</font>
+				<textcolor>header-dark</textcolor>
+			</control>
+			<!-- temp / time -->
+			<control type="label">
+				<label>$INFO[Weather.Temperature,, |]  $INFO[System.Time]</label>
+				<height>80</height>
+				<posx>1240</posx>
+				<font>header</font>
+				<textcolor>header-dark</textcolor>
+				<align>right</align>
+			</control>
+		</control>
+			
+		<!-- view options -->
+		<control type="group">
+		
+			<posx>1280</posx>
+			<posy>80</posy>
+			<animation effect="slide" start="0,0" end="-400,0" time="300">focus</animation>
+			<animation effect="slide" start="-400,0" end="0,0" time="300">unfocus</animation>
+			
+			<!-- background -->
+			<control type="image">
+				<texture>white2x2.png</texture>
+				<width>400</width>
+				<height>640</height>
+				<colordiffuse>ee2e2e2e</colordiffuse>
+			</control>
+			
+			<control type="grouplist" id="9000">
+			
+				<posx>20</posx>
+				<posy>20</posy>
+				<onleft>50</onleft>
+				<onright>50</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				
+				<!-- view as -->
+				<control type="button" id="2">
+					<include>type-sidebar</include>
+				</control>
+				<!-- shuffle -->
+				<control type="radiobutton" id="20">
+					<label>Shuffle</label>
+					<include>type-sidebar</include>
+				</control>
+				<!-- repeat -->
+				<control type="button" id="26">
+					<label>Repeat</label>
+					<include>type-sidebar</include>
+				</control>
+				<!-- save -->
+				<control type="button" id="21">
+					<label>Save</label>
+					<include>type-sidebar</include>
+				</control>
+				<!-- clear -->
+				<control type="button" id="22">
+					<label>Clear</label>
+					<include>type-sidebar</include>
+				</control>
+
+			</control>
+		</control>
+	
+	</controls>
+	
+</window>

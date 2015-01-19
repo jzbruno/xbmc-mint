@@ -1,0 +1,289 @@
+<!-- album info accessed from song info -->
+<window id="2001">
+
+	<defaultcontrol>5</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+
+	<controls>
+
+		<!-- dimmed background -->
+		<control type="image">
+			<texture>black.png</texture>
+			<width>1280</width>
+			<height>720</height>
+			<colordiffuse>dimmed</colordiffuse>
+		</control>
+		
+		<control type="group">
+		
+			<posx>180</posx>
+			<posy>80</posy>
+		
+			<!-- background -->
+			<control type="image">
+				<texture border="12">bg-dialog.png</texture>
+				<width>920</width>
+				<height>560</height>
+				<colordiffuse>dialog</colordiffuse>
+			</control>
+			<!-- heading / album title -->
+			<control type="label" id="20">
+				<label>Album Information</label>
+				<width>680</width>
+				<height>20</height>
+				<posx>20</posx>
+				<posy>20</posy>
+				<font>dialog</font>
+				<textcolor>type-dialog-header</textcolor>
+			</control>
+			
+			<!-- album cover -->
+			<control type="image" id="3">
+				<width>240</width>
+				<height>240</height>
+				<posx>20</posx>
+				<posy>60</posy>
+			</control>
+			<control type="group" id="9000">
+				<posx>65</posx>
+				<posy>360</posy>
+				<!-- tracks/review button -->
+				<control type="button" id ="5">
+					<label>182</label>
+					<onleft>61</onleft>
+					<onright>50</onright>
+					<onup>10</onup>
+					<ondown>6</ondown>
+				</control>
+				<!-- refresh button -->
+				<control type="button" id ="6">
+					<label>184</label>
+					<posy>50</posy>
+					<onleft>61</onleft>
+					<onright>50</onright>
+					<onup>5</onup>
+					<ondown>10</ondown>
+				</control>
+				<!-- get thumb button -->
+				<control type="button" id ="10">
+					<label>13405</label>
+					<posy>100</posy>
+					<onleft>61</onleft>
+					<onright>50</onright>
+					<onup>6</onup>
+					<ondown>5</ondown>
+				</control>
+			</control>
+			
+			<!-- artist -->
+			<control type="label">
+				<label>Artist</label>
+				<width>100</width>
+				<posx>380</posx>
+				<posy>60</posy>
+				<font>dialog</font>
+				<textcolor>type-dialog-dark</textcolor>
+				<align>right</align>
+			</control>
+			<control type="label" id="21">
+				<width>460</width>
+				<posx>400</posx>
+				<posy>60</posy>
+				<font>dialog</font>
+				<textcolor>type-dialog</textcolor>
+			</control>
+			<!-- year -->
+			<control type="label">
+				<label>Year</label>
+				<width>100</width>
+				<posx>380</posx>
+				<posy>90</posy>
+				<font>dialog</font>
+				<textcolor>type-dialog-dark</textcolor>
+				<align>right</align>
+			</control>
+			<control type="label" id="22">
+				<width>460</width>
+				<posx>400</posx>
+				<posy>90</posy>
+				<font>dialog</font>
+				<textcolor>type-dialog</textcolor>
+			</control>
+			<!-- rating -->
+			<control type="label">
+				<label>Rating</label>
+				<width>100</width>
+				<posx>380</posx>
+				<posy>120</posy>
+				<font>dialog</font>
+				<textcolor>type-dialog-dark</textcolor>
+				<align>right</align>
+			</control>
+			<control type="label" id="23">
+				<width>460</width>
+				<posx>400</posx>
+				<posy>120</posy>
+				<font>dialog</font>
+				<textcolor>type-dialog</textcolor>
+			</control>
+			<!-- genre -->
+			<control type="label">
+				<label>Genre</label>
+				<width>100</width>
+				<posx>380</posx>
+				<posy>150</posy>
+				<font>dialog</font>
+				<textcolor>type-dialog-dark</textcolor>
+				<align>right</align>
+			</control>
+			<control type="label" id="24">
+				<width>460</width>
+				<posx>400</posx>
+				<posy>150</posy>
+				<font>dialog</font>
+				<textcolor>type-dialog</textcolor>
+			</control>
+			<!-- tones -->
+			<control type="label">
+				<label>Tones</label>
+				<width>100</width>
+				<posx>380</posx>
+				<posy>180</posy>
+				<font>dialog</font>
+				<textcolor>type-dialog-dark</textcolor>
+				<align>right</align>
+			</control>
+			<control type="label" id="25">
+				<width>460</width>
+				<posx>400</posx>
+				<posy>180</posy>
+				<font>dialog</font>
+				<textcolor>type-dialog</textcolor>
+			</control>
+			<!-- styles -->
+			<control type="label">
+				<label>Styles</label>
+				<width>100</width>
+				<posx>380</posx>
+				<posy>210</posy>
+				<font>dialog</font>
+				<textcolor>type-dialog-dark</textcolor>
+				<align>right</align>
+			</control>
+			<control type="label" id="26">
+				<width>460</width>
+				<posx>400</posx>
+				<posy>210</posy>
+				<font>dialog</font>
+				<textcolor>type-dialog</textcolor>
+			</control>
+			
+			<!-- review/tracks outline -->
+			<control type="image">
+				<texture border="4">input-focus.png</texture>
+				<width>580</width>
+				<height>220</height>
+				<posx>280</posx>
+				<posy>320</posy>
+			</control>
+			<!-- textbox -->
+			<control type="textbox" id="4">
+				<visible>!Control.IsVisible(50)</visible>
+				<width>540</width>
+				<height>184</height>
+				<posx>300</posx>
+				<posy>338</posy>
+				<font>dialog</font>
+				<textcolor>type-dialog-dark</textcolor>
+				<onleft>5</onleft>
+				<onright>50</onright>
+				<onup>5</onup>
+				<ondown>5</ondown>
+				<pagecontrol>61</pagecontrol>
+			</control>
+			<!-- track list container -->		
+			<control type="list" id="50">
+				<width>540</width>
+				<height>184</height>
+				<posx>300</posx>
+				<posy>338</posy>
+				<onleft>9000</onleft>
+				<onright>61</onright>
+				<onup>50</onup>
+				<ondown>50</ondown>
+				<pagecontrol>61</pagecontrol>				
+				<itemlayout width="540" height="30">
+					<control type="label">
+						<label>$INFO[ListItem.TrackNumber] - $INFO[ListItem.Label]</label>
+						<width>200</width>
+						<height>20</height>
+						<posy>-10</posy>
+						<font>dialog</font>
+						<textcolor>type-dialog-dark</textcolor>
+					</control>
+					<control type="label">
+						<label>$INFO[ListItem.Duration]</label>
+						<width>80</width>
+						<height>20</height>
+						<posx>280</posx>
+						<posy>-10</posy>
+						<font>dialog</font>
+						<textcolor>type-dialog-dark</textcolor>
+						<align>right</align>
+					</control>
+				</itemlayout>	
+				<focusedlayout height="30" width="540">
+					<control type="label">
+						<label>$INFO[ListItem.TrackNumber] - $INFO[ListItem.Label]</label>
+						<width>200</width>
+						<height>20</height>
+						<posy>-10</posy>
+						<font>dialog</font>
+						<textcolor>type-dialog</textcolor>
+					</control>
+					<control type="label">
+						<label>$INFO[ListItem.Duration]</label>
+						<width>80</width>
+						<height>20</height>
+						<posx>280</posx>
+						<posy>-10</posy>
+						<font>dialog</font>
+						<textcolor>type-dialog</textcolor>
+						<align>right</align>
+					</control>
+				</focusedlayout>
+			</control>
+			
+			<control type="button">
+				<visible>Control.IsVisible(61)</visible>
+				<width>20</width>
+				<height>20</height>
+				<posx>880</posx>
+				<posy>320</posy>
+				<texturefocus border="4">scrollbar-up.png</texturefocus>
+				<texturenofocus border="4">scrollbar-up-nf.png</texturenofocus>
+				<onclick>PageUp(61)</onclick>
+			</control>
+			<control type="scrollbar" id="61">
+				<width>20</width>
+				<height>180</height>
+				<posx>880</posx>
+				<posy>340</posy>
+				<onleft>50</onleft>
+				<onright>9000</onright>
+			</control>		
+			<control type="button">
+				<visible>Control.IsVisible(61)</visible>
+				<width>20</width>
+				<height>20</height>
+				<posx>880</posx>
+				<posy>520</posy>
+				<texturefocus border="4">scrollbar-down.png</texturefocus>
+				<texturenofocus border="4">scrollbar-down-nf.png</texturenofocus>
+				<onclick>PageDown(61)</onclick>
+			</control>
+		</control>			
+	
+	</controls>
+	
+</window>

@@ -1,0 +1,75 @@
+﻿<window id="101">
+
+	<defaultcontrol>10</defaultcontrol>
+
+	<controls>
+
+		<control type="group">
+		
+			<posx>780</posx>
+			<posy>500</posy>
+				
+			<!-- background -->
+			<control type="image" id="0">
+				<texture border="12">bg-dialog.png</texture>
+				<width>480</width>
+				<height>200</height>
+				<colordiffuse>dialog</colordiffuse>
+			</control>
+			<!-- heading -->
+			<control type="label" id="1">
+				<width>440</width>
+				<height>20</height>
+				<posx>20</posx>
+				<posy>20</posy>
+				<font>dialog</font>
+				<textcolor>type-dialog-header</textcolor>
+			</control>
+			<!-- line 1 -->
+			<control type="label" id="2">
+				<width>440</width>
+				<height>20</height>
+				<posx>20</posx>
+				<posy>60</posy>
+				<font>dialog</font>
+				<textcolor>type-dialog-dark</textcolor>
+				<haspath>yes</haspath>
+			</control>
+			<!-- line 2 -->
+			<control type="label" id="3">
+				<width>440</width>
+				<height>20</height>
+				<posx>20</posx>
+				<posy>85</posy>
+				<font>dialog</font>
+				<textcolor>type-dialog-dark</textcolor>
+				<haspath>yes</haspath>
+			</control>
+			<!-- line 3 -->
+			<control type="label" id="4">
+				<width>440</width>
+				<height>20</height>
+				<posx>20</posx>
+				<posy>110</posy>
+				<font>dialog</font>
+				<textcolor>type-dialog-dark</textcolor>
+				<haspath>yes</haspath>
+			</control>
+			<!-- progress bar -->
+			<control type="progress" id="20">
+				<width>270</width>
+				<posx>20</posx>
+				<posy>155</posy>
+			</control>
+			<!-- cancel button -->
+			<control type="button" id="10">
+				<label>Cancel</label>
+				<height>30</height>
+				<posx>310</posx>
+				<posy>155</posy>
+			</control>
+		</control>
+	
+	</controls>
+	
+</window>

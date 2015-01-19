@@ -1,0 +1,115 @@
+<!-- window available on right thumbstick click -->
+<window type="buttonMenu" id="111">
+
+	<defaultcontrol>9000</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+
+	<controls>
+	
+		<control type="group">
+		
+	<visible>!Window.IsVisible(favourites)</visible>
+			<posx>860</posx>
+	
+			<animation effect="slide" start="420,0" end="0,0" time="300">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="420,0" time="300">WindowClose</animation>
+			
+			<!-- background -->
+			<control type="image">
+				<texture>black.png</texture>
+			    <width>420</width>
+				<height>720</height>
+				<colordiffuse>dialog</colordiffuse>
+			</control>
+			
+			<!-- main buttons -->
+			<control type="list" id="9000">
+				<viewtype label="menu">wrap</viewtype>
+				<width>380</width>
+				<height>480</height>
+				<posx>20</posx>
+				<posy>160</posy>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				<content>
+					<item>
+						<label>refresh</label>
+						<onclick>ReloadSkin()</onclick>
+					</item>
+					<item>
+						<label>favorites</label>
+						<onclick>ActivateWindow(myfavourites)</onclick>
+						<onclick>Dialog.Close(shutdownmenu)</onclick>
+					</item>
+					<item>
+						<label>filemanager</label>
+						<onclick>ActivateWindow(filemanager)</onclick>
+						<onclick>Dialog.Close(shutdownmenu)</onclick>
+					</item>
+					<item>
+						<label>scripts</label>
+						<onclick>ActivateWindow(scripts)</onclick>
+						<onclick>Dialog.Close(shutdownmenu)</onclick>
+					</item>
+					<item>
+						<label>settings</label>
+						<onclick>ActivateWindow(settings)</onclick>
+						<onclick>Dialog.Close(shutdownmenu)</onclick>
+					</item>
+					<item>
+						<label>dashboard</label>
+						<onclick>Dashboard</onclick>
+					</item>
+					<item>
+						<label>shutdown</label>
+						<onclick>ShutDown()</onclick>
+					</item>
+					<item>
+						<label>restart</label>
+						<onclick>Restart()</onclick>
+					</item>
+					<item>
+						<label>system info</label>
+						<onclick>ActivateWindow(systeminfo)</onclick>
+						<onclick>Dialog.Close(shutdownmenu)</onclick>
+					</item>
+				</content>
+				<itemlayout height="50">
+					<control type="label">
+						<label>$INFO[ListItem.Label]</label>
+						<width>380</width>
+						<height>50</height>
+						<posx>380</posx>
+						<font>menu</font>
+						<textcolor>menu-dark</textcolor>
+						<align>right</align>
+					</control>
+				</itemlayout>
+				<focusedlayout height="50">
+					<control type="label">
+						<label>$INFO[ListItem.Label]</label>
+						<width>380</width>
+						<height>50</height>
+						<posx>380</posx>
+						<font>menu</font>
+						<textcolor>menu</textcolor>
+						<align>right</align>
+					</control>
+				</focusedlayout>
+			</control>
+			
+			<!-- window label -->
+			<control type="label">
+				<label>System</label>
+				<width>380</width>
+				<height>80</height>
+				<posx>380</posx>
+				<font>menu</font>
+				<textcolor>header-dark</textcolor>
+				<align>right</align>
+			</control>
+		</control>
+	
+	</controls>
+	
+</window>

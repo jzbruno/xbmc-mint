@@ -1,0 +1,73 @@
+﻿<window id="2002">
+
+	<defaultcontrol>10</defaultcontrol>
+
+	<controls>
+	
+		<!-- dimmed background -->
+		<control type="image">
+			<texture>black.png</texture>
+			<width>1280</width>
+			<height>720</height>
+			<colordiffuse>dimmed</colordiffuse>
+		</control>
+		
+		<control type="group">
+		
+			<posx>430</posx>
+			<posy>240</posy>		
+		
+			<!-- background -->
+			<control type="image">
+				<texture border="12">bg-dialog.png</texture>
+				<width>420</width>
+				<height>240</height>
+				<colordiffuse>dialog</colordiffuse>
+			</control>
+			<!-- heading -->
+			<control type="label" id="1">
+				<width>400</width>
+				<height>20</height>
+				<posx>20</posx>
+				<posy>20</posy>
+				<font>dialog</font>
+				<textcolor>type-dialog-header</textcolor>
+			</control>
+			<!-- line 1 -->
+			<control type="label" id="2">
+				<width>400</width>
+				<height>20</height>
+				<posx>20</posx>
+				<posy>60</posy>
+				<font>dialog</font>
+				<textcolor>type-dialog-dark</textcolor>
+			</control>
+			<!-- line 2 -->
+			<control type="label" id="3">
+				<width>400</width>
+				<height>20</height>
+				<posx>20</posx>
+				<posy>85</posy>
+				<font>dialog</font>
+				<textcolor>type-dialog-dark</textcolor>
+			</control>
+			<!-- line 3 -->
+			<control type="label" id="4">
+				<width>400</width>
+				<height>20</height>
+				<posx>20</posx>
+				<posy>110</posy>
+				<font>dialog</font>
+				<textcolor>type-dialog-dark</textcolor>
+			</control>
+			<!-- ok button -->
+			<control type="button" id="10">
+				<label>Ok</label>
+				<posx>120</posx>
+				<posy>180</posy>
+			</control>
+		</control>
+		
+	</controls>
+	
+</window>

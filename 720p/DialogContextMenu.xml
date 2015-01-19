@@ -1,0 +1,45 @@
+<!-- TODO -->
+<!-- context menu accessed from list container when pressing white button -->
+<window id="106">
+
+	<defaultcontrol>1000</defaultcontrol>
+
+	<animation effect="fade" start="0" end="100" time="300">WindowOpen</animation>
+	<animation effect="fade" start="100" end="0" time="300">WindowOpen</animation>
+
+	<controls>
+
+		<control type="group">
+			<!-- background -->
+			<control type="image" id="997">
+				<texture border="16,8,16,0">bg-dialog-top.png</texture>
+				<width>320</width>
+				<height>10</height>
+				<posy>-10</posy>
+				<colordiffuse>eeffffff</colordiffuse>
+			</control>
+			<control type="image" id="999">
+				<texture border="16,0,16,0">bg-dialog-mid.png</texture>
+				<width>320</width>
+				<colordiffuse>eeffffff</colordiffuse>
+			</control>
+			<control type="image" id="998">
+				<texture border="16,8,16,0">bg-dialog-bot.png</texture>
+				<width>320</width>
+				<height>10</height>
+				<colordiffuse>eeffffff</colordiffuse>
+			</control>
+			<!-- context items -->
+			<control type="button" id="1000">
+				<width>280</width>
+				<height>40</height>
+				<posx>20</posx>
+				<texturenofocus>keyboard-btn-space.png</texturenofocus>
+				<texturefocus>keyboard-btn-space-focus2.png</texturefocus>
+				<align>center</align>
+			</control>
+		</control>
+	
+	</controls>
+	
+</window>

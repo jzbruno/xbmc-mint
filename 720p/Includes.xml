@@ -1,0 +1,44 @@
+<includes>
+
+	<!-- default controls -->
+	<include file="Defaults.xml" />
+	
+	<!-- backgrounds -->
+	<include file="Backgrounds.xml" />
+	
+	<!-- general views -->
+	<include file="ViewList.xml" />
+	<include file="ViewIcon.xml" />
+	<include file="ViewPanel.xml" />
+	<include file="ViewPanelSmall.xml" />
+	<!-- video views -->
+	<include file="ViewCategory.xml" />
+	<include file="ViewSimpleList.xml" />
+	<include file="ViewDVDCover.xml" />
+	<!-- music views -->
+	<include file="ViewAlbum.xml" />
+	<include file="ViewCoverWall.xml" />
+	<!-- pic views -->
+	<include file="ViewPicWall.xml" />
+	
+	<!-- sidebar typography -->
+	<include name="type-sidebar">
+		<width>360</width>
+		<height>50</height>
+		<posx>20</posx>
+		<font>sidebar</font>
+		<textcolor>sidebar-dark</textcolor>
+		<focusedcolor>sidebar</focusedcolor>
+		<disabledcolor>disabled</disabledcolor>
+		<align>left</align>
+		<texturefocus></texturefocus>
+		<texturenofocus></texturenofocus>
+	</include>
+	<!-- content typography -->
+	<include name="type-settings">
+		<font>content</font>
+		<textcolor>content-dark</textcolor>
+		<focusedcolor>s</focusedcolor>
+	</include>
+	
+</includes>

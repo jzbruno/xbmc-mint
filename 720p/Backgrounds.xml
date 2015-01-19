@@ -1,0 +1,83 @@
+<includes>
+	
+	<!-- bg-movies -->
+	<include name="bg-movies">
+		<control type="image">
+		    <visible>[Window.IsActive(home) + Container(9000).HasFocus(1)] | [Window.IsActive(videofiles) + Skin.HasSetting(movies)]</visible>
+		    <texture>bg-movies.png</texture>
+		    <width>1280</width>
+		    <height>720</height>
+			<animation effect="fade" delay="0" time="500">VisibleChange</animation>
+		</control>
+	</include>
+	<!-- bg-tv -->
+	<include name="bg-tv">
+		<control type="image">
+		    <visible>[Window.IsActive(home) + Container(9000).HasFocus(2)] | [Window.IsActive(videofiles) + Skin.HasSetting(tv)]</visible>
+		    <texture>bg-tv.png</texture>
+		    <width>1280</width>
+		    <height>720</height>
+			<animation effect="fade" delay="0" time="500">VisibleChange</animation>
+		</control>
+	</include>
+	<!-- bg-games -->
+	<include name="bg-games">
+		<control type="image">
+		    <visible>[Window.IsActive(home) + Container(9000).HasFocus(3)] | [Window.IsActive(programs) + Skin.HasSetting(games)] | Window.IsActive(gamesaves)</visible>
+		    <texture>bg-games.png</texture>
+		    <width>1280</width>
+		    <height>720</height>
+			<animation effect="fade" delay="0" time="500">VisibleChange</animation>
+		</control>
+	</include>
+	<!-- bg-arcade -->
+	<include name="bg-arcade">
+		<control type="image">
+		    <visible>[Window.IsActive(home) + Container(9000).HasFocus(4)] | [Window.IsActive(programs) + Skin.HasSetting(arcade)]</visible>
+		    <texture>bg-arcade.png</texture>
+		    <width>1280</width>
+		    <height>720</height>
+			<animation effect="fade" delay="0" time="500">VisibleChange</animation>
+		</control>
+	</include>
+	<!-- bg-music -->
+	<include name="bg-music">
+		<control type="image">
+		    <visible>[Window.IsActive(home) + Container(9000).HasFocus(5)] | Window.IsActive(musicfiles)</visible>
+		    <texture>bg-music.png</texture>
+		    <width>1280</width>
+		    <height>720</height>
+			<animation effect="fade" delay="0" time="500">VisibleChange</animation>
+		</control>
+	</include>
+	<!-- bg-pictures -->
+	<include name="bg-pictures">
+		<control type="image">
+		    <visible>[Window.IsActive(home) + Container(9000).HasFocus(6)] | Window.IsActive(pictures)</visible>
+		    <texture>bg-pictures.png</texture>
+		    <width>1280</width>
+		    <height>720</height>
+			<animation effect="fade" delay="0" time="500">VisibleChange</animation>
+		</control>
+	</include>
+	<!-- bg-weather -->
+	<include name="bg-weather">
+		<control type="image">
+		    <visible>[Window.IsActive(home) + Container(9000).HasFocus(7)] | Window.IsActive(weather)</visible>
+		    <texture>bg-weather.png</texture>
+		    <width>1280</width>
+		    <height>720</height>
+			<animation effect="fade" delay="0" time="500">VisibleChange</animation>
+		</control>
+	</include>
+	<!-- bg-system -->
+	<include name="bg-system">
+		<control type="image">
+		    <texture>bg-system.png</texture>
+		    <width>1280</width>
+		    <height>720</height>
+			<animation effect="fade" delay="0" time="500">VisibleChange</animation>
+		</control>
+	</include>
+	
+</includes>

@@ -1,0 +1,120 @@
+<!-- 
+USE: General view for displaying a list of folders/files.
+-->
+<includes>
+
+	<include name="ViewList">
+			
+		<control type="group">
+				
+			<posy>80</posy>
+			
+			<!-- background -->
+			<control type="image">
+				<visible>Control.IsVisible(50)</visible>
+				<texture>black2x2.png</texture>
+				<width>1280</width>
+				<height>560</height>
+			</control>
+			<!-- list container -->
+			<control type="list" id="50">
+			
+				<viewtype label="List">list</viewtype>
+				<width>780</width>
+				<height>440</height>
+				<posx>480</posx>
+				<posy>60</posy>
+				<onup>50</onup>
+				<ondown>50</ondown>
+				<onleft></onleft>
+				<onright>9000</onright>
+				
+				<itemlayout height="60">
+					<control type="image">
+						<texture>$INFO[ListItem.Icon]</texture>
+						<width>48</width>
+						<height>48</height>
+						<posy>6</posy>
+					</control>
+					<control type="label">
+						<label>$INFO[ListItem.Label]</label>
+						<width>340</width>
+						<height>40</height>
+						<posx>80</posx>
+						<font>content</font>
+						<textcolor>content-dark</textcolor>
+						<selectedcolor>content-selected</selectedcolor>
+					</control>
+					<control type="label">
+						<label>$INFO[ListItem.Label2]</label>
+						<width>120</width>
+						<height>40</height>
+						<posx>660</posx>
+						<font>content</font>
+						<textcolor>content-dark</textcolor>
+						<selectedcolor>content-selected</selectedcolor>
+					</control>
+				</itemlayout>
+				<focusedlayout height="60">
+					<control type="image">
+						<texture>$INFO[ListItem.Icon]</texture>
+						<width>48</width>
+						<height>48</height>
+						<posy>6</posy>
+					</control>
+					<control type="label">
+						<label>$INFO[ListItem.Label]</label>
+						<width>340</width>
+						<height>40</height>
+						<posx>80</posx>
+						<font>content</font>
+						<textcolor>content</textcolor>
+						<selectedcolor>content-selected</selectedcolor>
+					</control>
+					<control type="label">
+						<label>$INFO[ListItem.label2]</label>
+						<width>120</width>
+						<height>40</height>
+						<posx>660</posx>
+						<font>content</font>
+						<textcolor>content</textcolor>
+						<selectedcolor>content-selected</selectedcolor>
+					</control>
+				</focusedlayout>
+			</control>
+			<!-- cover image -->
+			<control type="image">
+				<visible>Control.IsVisible(50)</visible>
+				<info>ListItem.Icon</info>
+				<width>380</width>
+				<height>380</height>
+				<posx>40</posx>
+				<posy>40</posy>
+			</control>
+		    <control type="label">
+				<visible>Control.IsVisible(50)</visible>
+		    	<label>$INFO[ListItem.Label]</label>
+		    	<width>360</width>
+		    	<height>40</height>
+		    	<posx>40</posx>
+		    	<posy>450</posy>
+		    	<font>content</font>
+		    	<textcolor>content</textcolor>
+		    	<selectedcolor>content-selected</selectedcolor>
+			</control>
+		    <control type="label">
+				<visible>Control.IsVisible(50)</visible>
+		    	<label>$INFO[ListItem.Label2]</label>
+		    	<width>460</width>
+		    	<height>40</height>
+		    	<posx>40</posx>
+		    	<posy>490</posy>
+		    	<font>content</font>
+		    	<textcolor>content</textcolor>
+		    	<selectedcolor>content-selected</selectedcolor>
+		    </control>
+		</control>
+		
+	</include>
+	
+</includes>

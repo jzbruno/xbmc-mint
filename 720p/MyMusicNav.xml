@@ -1,0 +1,149 @@
+<!-- music library -->
+<window id="502">
+
+	<defaultcontrol>50</defaultcontrol>
+	<allowoverlay>yes</allowoverlay>
+
+	<controls>
+
+		<!-- background -->
+		<include>bg-music</include>
+		<control type="image">
+			<texture>white2x2.png</texture>
+			<width>1280</width>
+			<height>720</height>
+			<colordiffuse>ff20281b</colordiffuse>
+		</control>
+		
+		<!-- view modes -->		
+		<include>ViewList</include>
+		<include>ViewIcon</include>
+		<include>ViewPanel</include>
+		<include>ViewPanelSmall</include>
+
+		<!-- header -->
+		<control type="group">
+		
+			<animation effect="slide" start="0,-80" end="0,0" time="300">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,-80" time="300">WindowClose</animation>
+
+			<!-- background -->
+			<control type="image">
+				<texture>mint2x2.png</texture>
+				<width>1280</width>
+				<height>80</height>
+			</control>
+			<!-- mint logo -->
+			<control type="image">
+				<texture>mint-logo.png</texture>
+				<width>48</width>
+				<height>48</height>
+				<posx>20</posx>
+				<posy>16</posy>
+			</control>
+			<!-- window name -->
+			<control type="label">
+				<label>Music Library</label>
+				<height>80</height>
+				<posx>88</posx>
+				<font>header</font>
+				<textcolor>header-dark</textcolor>
+			</control>
+			<!-- temp / time -->
+			<control type="label">
+				<label>$INFO[Weather.Temperature,, |]  $INFO[System.Time]</label>
+				<height>80</height>
+				<posx>1240</posx>
+				<font>header</font>
+				<textcolor>header-dark</textcolor>
+				<align>right</align>
+			</control>
+		</control>					
+
+		<!-- view options -->
+		<control type="group">
+		
+			<posx>1280</posx>
+			<posy>80</posy>
+			<animation effect="slide" start="0,0" end="-400,0" time="300">focus</animation>
+			<animation effect="slide" start="-400,0" end="0,0" time="300">unfocus</animation>
+			
+			<!-- background -->
+			<control type="image">
+				<texture>white2x2.png</texture>
+				<width>400</width>
+				<height>640</height>
+				<colordiffuse>ee2e2e2e</colordiffuse>
+			</control>
+			
+			<control type="grouplist" id="9000">
+			
+				<posx>20</posx>
+				<posy>20</posy>
+				<onleft>50</onleft>
+				<onright>50</onright>
+				<onup>9000</onup>
+				<ondown>9000</ondown>
+				
+				<!-- view as -->
+				<control type="button" id="2">
+					<include>type-sidebar</include>
+				</control>
+				<!-- sort by -->
+				<control type="button" id="3">
+					<include>type-sidebar</include>
+				</control>
+				<!-- library -->
+				<control type="radiobutton" id="99">
+					<label>Library Mode</label>
+					<include>type-sidebar</include>
+					<onclick>ReplaceWindow(mymusicfiles)</onclick>
+					<onclick>SetFocus(99)</onclick>
+					<selected>Window.IsVisible(mymusiclibrary)</selected>
+				</control>
+				<!-- search -->
+				<control type="button" id="8">
+					<label>137</label>
+					<include>type-sidebar</include>
+				</control>
+				<!-- filter -->
+				<control type="radiobutton" id="19">
+					<label>587</label>
+					<include>type-sidebar</include>
+				</control>
+				<!-- party mode -->
+				<control type="radiobutton" id="16">
+					<label>589</label>
+					<include>type-sidebar</include>
+				</control>
+				<!-- last fm love -->
+				<control type="button" id="20">
+					<visible>LastFM.RadioPlaying</visible>
+					<width>20</width>
+					<height>20</height>
+					<texturefocus>Love-focus.png</texturefocus>
+					<texturenofocus>Love.png</texturenofocus>
+					<onclick>XBMC.LastFM.Love</onclick>
+				</control>
+				<!-- last fm hate -->
+				<control type="button" id="21">
+					<visible>LastFM.RadioPlaying</visible>
+					<width>20</width>
+					<height>20</height>
+					<texturefocus>Ban-focus.png</texturefocus>
+					<texturenofocus>Ban.png</texturenofocus>
+					<onclick>XBMC.LastFM.Ban</onclick>
+				</control>
+				<!-- settings -->
+				<control type="button" id="100">
+					<label>Settings</label>
+					<include>type-sidebar</include>
+					<onclick>ActivateWindow(musicsettings)</onclick>
+				</control>
+
+			</control>
+		</control>
+
+	</controls>
+
+</window>

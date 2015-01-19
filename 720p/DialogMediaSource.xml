@@ -1,0 +1,193 @@
+<!-- add new source dialog -->
+<window id="129">
+
+	<defaultcontrol>10</defaultcontrol>
+
+	<animation effect="zoom" end="100" time="400">WindowOpen</animation>
+	<animation effect="zoom" end="0" time="200">WindowClose</animation>
+	
+	<controls>
+	
+		<!-- dimmed background -->
+		<control type="image">
+			<texture>black.png</texture>
+			<width>1280</width>
+			<height>720</height>
+			<colordiffuse>dimmed</colordiffuse>
+		</control>
+
+		<control type="group">
+		
+			<posx>320</posx>
+			<posy>120</posy>
+			
+			<!-- background -->
+			<control type="image">
+				<texture border="12">bg-dialog.png</texture>
+				<width>640</width>
+				<height>480</height>
+				<colordiffuse>dialog</colordiffuse>
+			</control>
+			<!-- heading -->
+			<control type="label" id="2">
+				<label>Media Sources</label>
+				<width>600</width>
+				<height>20</height>
+				<posx>20</posx>
+				<posy>20</posy>
+				<font>dialog</font>
+				<textcolor>type-dialog-header</textcolor>
+			</control>
+
+			<!-- sources list -->
+			<control type="label">
+				<label>Enter the path or browse for media</label>
+				<width>600</width>
+				<height>20</height>
+				<posx>20</posx>
+				<posy>60</posy>
+				<font>dialog</font>
+				<textcolor>type-dialog</textcolor>
+			</control>
+			<control type="list" id="10">
+				<width>450</width>
+				<height>200</height>
+				<posx>20</posx>
+				<posy>100</posy>
+				<onup>9001</onup>
+				<onleft>9000</onleft>
+				<onright>9000</onright>
+				<ondown>12</ondown>
+				<itemlayout height="40">
+					<control type="image">
+						<texture>input-nofocus.png</texture>
+						<width>430</width>
+						<height>36</height>
+					</control>
+					<control type="label">
+						<label>$INFO[ListItem.Label]</label>
+						<width>430</width>
+						<height>40</height>
+						<posx>20</posx>
+						<font>dialog</font>
+						<textcolor>type-dialog-dark</textcolor>
+					</control>
+				</itemlayout>
+				<focusedlayout height="40">
+					<control type="image">
+						<visible>!Control.hasfocus(10)</visible>
+						<texture>input-nofocus.png</texture>
+						<width>430</width>
+						<height>36</height>
+					</control>
+					<control type="image">
+						<visible>Control.hasfocus(10)</visible>
+						<texture>input-focus.png</texture>
+						<width>430</width>
+						<height>36</height>
+					</control>
+					<control type="label">
+						<label>$INFO[ListItem.Label]</label>
+						<width>430</width>
+						<height>40</height>
+						<posx>20</posx>
+						<font>dialog</font>
+						<textcolor>type-dialog</textcolor>
+					</control>
+				</focusedlayout>
+			</control>
+			
+			<control type="group" id="9000">
+			
+				<posx>470</posx>
+				<posy>100</posy>
+			
+				<!-- browse -->
+				<control type="button" id="11">
+					<label>Browse</label>
+					<onup>18</onup>
+					<onleft>10</onleft>
+					<onright>10</onright>
+					<ondown>13</ondown>
+				</control>
+				<!-- add path -->
+				<control type="button" id="13">
+					<label>Add</label>
+					<posy>50</posy>
+					<onup>11</onup>
+					<onleft>10</onleft>
+					<onright>10</onright>
+					<ondown>14</ondown>
+				</control>
+				<!-- remove path -->
+				<control type="button" id="14">
+					<label>Remove</label>
+					<posy>100</posy>
+					<onup>13</onup>
+					<onleft>10</onleft>
+					<onright>10</onright>
+					<ondown>12</ondown>
+				</control>
+			</control>
+
+			<!-- name source -->			
+			<control type="label">
+				<label>Name this source</label>
+				<width>600</width>
+				<posx>20</posx>
+				<posy>300</posy>
+				<font>dialog</font>
+				<textcolor>type-dialog</textcolor>
+			</control>
+			<control type="button" id="12">
+				<width>600</width>
+				<height>40</height>
+				<posx>20</posx>
+				<posy>350</posy>
+				<textoffsetx>20</textoffsetx>
+				<textwidth>380</textwidth>
+				<texturefocus>input-focus.png</texturefocus>
+				<texturenofocus>input-nofocus.png</texturenofocus>
+				<onup>9000</onup>
+				<onleft>12</onleft>
+				<onright>12</onright>
+				<ondown>9001</ondown>
+			</control>
+			
+			<control type="group" id="9001">
+				
+				<posx>140</posx>
+				<posy>420</posy>
+				
+				<!-- set content button -->
+				<control type="button" id="20">
+					<label>Set Content</label>
+					<onup>12</onup>
+					<onleft>18</onleft>
+					<onright>19</onright>
+					<ondown>10</ondown>
+				</control>
+				<!-- ok button -->
+				<control type="button" id="18">
+					<label>Ok</label>
+					<posx>170</posx>
+					<onup>12</onup>
+					<onleft>19</onleft>
+					<onright>20</onright>
+					<ondown>10</ondown>
+				</control>
+				<!-- cancel button -->
+				<control type="button" id="19">
+					<label>Cancel</label>
+					<posx>330</posx>
+					<onup>12</onup>
+					<onleft>20</onleft>
+					<onright>18</onright>
+					<ondown>10</ondown>
+				</control>`
+			</control>
+		</control>
+	
+	</controls>
+	
+</window>
